@@ -5,7 +5,7 @@ import csv
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FOLDER_PATH = os.path.join(SCRIPT_DIR, "unmerged")
 
-OUTPUT_FILE = os.path.join(SCRIPT_DIR, "Merged.csv")
+OUTPUT_FILE = os.path.join(SCRIPT_DIR, "_merged.csv")
 
 # Match ANY CSV file in the folder
 PATTERN = os.path.join(FOLDER_PATH, "*.csv")

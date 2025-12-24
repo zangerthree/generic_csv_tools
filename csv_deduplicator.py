@@ -2,8 +2,8 @@ import os
 import csv
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-INPUT_FILE = os.path.join(SCRIPT_DIR, "Merged.csv")
-OUTPUT_FILE = os.path.join(SCRIPT_DIR, "Deduplicated.csv")
+INPUT_FILE = os.path.join(SCRIPT_DIR, "_merged.csv")
+OUTPUT_FILE = os.path.join(SCRIPT_DIR, "_deduplicated.csv")
 
 if not os.path.exists(INPUT_FILE):
     raise FileNotFoundError(f"Input file not found: {INPUT_FILE}")
@@ -28,7 +28,6 @@ with open(INPUT_FILE, mode="r", newline="", encoding="utf-8") as infile:
                     seen_first_column.add(first_col_value)
                     writer.writerow(row)
                 else:
-                    print(first_col_value)
                     rows_removed += 1
 
 print(f"Removed {rows_removed} duplicate rows based on first column")
